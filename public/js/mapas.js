@@ -37,8 +37,8 @@
             
             map.setCenter(pos);
             marker.setMap(map);
-            document.getElementById("quetel").innerHTML = "Operador:"+data.operador
-            +",    Tecnología: "+ data.tecnologia+" ,    Fabricante Chip: " +data.fabricante +",     Modelo Chip: " +data.modelo
+           // document.getElementById("quetel").innerHTML = "Operador:"+data.operador
+           // +",    Tecnología: "+ data.tecnologia+" ,    Fabricante Chip: " +data.fabricante +",     Modelo Chip: " +data.modelo
           
 
         

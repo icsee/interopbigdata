@@ -77,40 +77,10 @@ $(document).ready(() => {
       }
     }
   }
-  /*var ctx = document.getElementById('chart1').getContext('2d')
-  var data = {
-    labels: [0],
-    datasets: [{
-      data: [0],
-      label: 'lux',
-      // backgroundColor: '#F44436',
-      borderColor: '#F44436',
-      pointBackgroundColor: '#F44436'
-    }]
-  }
-  
-  var chart1 = new Chart(ctx, {
-    type: 'line',
-    data: data,
-    options: optionsAnimations
-  })
 
-  var ctx2 = document.getElementById('chart2').getContext('2d')
-  var data2 = {
-    labels: [0],
-    datasets: [{
-      data: [0],
-      label: 'lux',
-      // backgroundColor: '#ff6600'
-      borderColor: '#F44436',
-      pointBackgroundColor: '#F44438'
-    }]
-  }
-  var chart2 = new Chart(ctx2, {
-    type: 'line',
-    data: data2,
-    options: optionsAnimations
-  })
+  
+  /*
+
 
   //chart3
   var ctx3 = document.getElementById('chart3').getContext('2d')
@@ -132,6 +102,7 @@ borderColor: '#F44436',
 
   //chart4
   var ctx4 = document.getElementById("chart4");
+
   var data4 = {
     labels: [0],
     datasets: [{
@@ -158,7 +129,7 @@ borderColor: '#F44436',
       data: [3],
       label: 'CSQ',
       //backgroundColor: '#ff6600',
-      borderColor: '#f55a07',
+	  borderColor: '#f55a07',
       pointBackgroundColor:'#f5c307'
     },
   
@@ -172,7 +143,7 @@ borderColor: '#F44436',
     
   })
 
-  
+    
 
   // When a web socket message arrives:
   // 1. Unpack it
@@ -193,8 +164,10 @@ borderColor: '#F44436',
         //fabricante:messageData.IotData.fabricante,
         //modelo:messageData.IotData.modelo
       };
-    
-      
+   
+		//código para el sensor UV
+   
+       
       
      /* var length = data.labels.length
       if (length >= 20) {
@@ -204,16 +177,7 @@ borderColor: '#F44436',
 
       data.labels.push(moment().format('HH:mm:ss'))
       data.datasets[0].data.push(messageData.IotData.Bluetooth)
-//código para el sistema Lora
-   
-        var length = data2.labels.length
-        if (length >= 20) {
-          data2.datasets[0].data.shift()
-          data2.labels.shift()  
-        }
 
-        data2.labels.push(moment().format('HH:mm:ss'))
-        data2.datasets[0].data.push(messageData.IotData.Lora)
 
         //código para particle
    
@@ -241,9 +205,13 @@ borderColor: '#F44436',
     data4.datasets[1].data.push(messageData.IotData.rssiLora)
     data4.datasets[2].data.push(messageData.IotData.rssiBluetooth)
     data4.datasets[3].data.push(messageData.IotData.CSQ)
-  
+	
+    document.getElementById("csq").innerHTML =messageData.IotData.CSQ.toFixed(2)+' DBi';
+	document.getElementById("rssiLora").innerHTML =messageData.IotData.rssiLora.toFixed(2)+' DBi';
+	document.getElementById("rssiBLE").innerHTML =messageData.IotData.rssiBluetooth.toFixed(2)+' DBi';
+	document.getElementById("rssiWIFI").innerHTML =messageData.IotData.rssiParticle.toFixed(2)+' DBi';	
     //chart1.update()
-    //chart2.update()
+
     //chart3.update()
     chart4.update()
     writemap(pos);
